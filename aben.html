@@ -7,6 +7,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <style>
+        @font-face {
+            font-family: 'Burbank Big Condensed';
+            src: url('fonts/BurbankBigCondensed-Black.woff2') format('woff2'),
+                 url('fonts/BurbankBigCondensed-Black.woff') format('woff'),
+                 url('fonts/BurbankBigCondensed-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         :root {
             --neon-blue: #00f3ff;
             --dark-blue: #001d3d;
@@ -17,7 +27,8 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Burbank Big Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+            letter-spacing: 1px;
         }
 
         body {
