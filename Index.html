@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABen - Official Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Burbank+Big+Condensed&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --dark-blue: #001d3d;
+            --metallic: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Burbank Big Condensed', 'Arial', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        body {
+            background-color: #000;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--neon-blue);
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+            animation: glow 2s infinite alternate;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: var(--neon-blue);
+            color: black;
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            text-align: center;
+        }
+
+        .hero-logo {
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo img {
+            height: 150px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .hero-content h1 {
+            font-size: 6rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px var(--neon-blue),
+                         0 0 20px var(--neon-blue),
+                         0 0 40px var(--neon-blue);
+            animation: pulsate 2s infinite;
+        }
+
+        @keyframes pulsate {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; transform: scale(1.02); }
+            100% { opacity: 1; }
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: var(--neon-blue);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--neon-blue);
+            transform: scale(1.2);
+        }
+
+        .merch-section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .merch-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .merch-item {
+            background: rgba(44, 62, 80, 0.3);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 243, 255, 0.1);
+        }
+
+        .merch-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px var(--neon-blue);
+        }
+
+        .merch-item img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .merch-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .merch-item h3 {
+            color: var(--neon-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .merch-item .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .buy-btn {
+            background: var(--neon-blue);
+            color: black;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .buy-btn:hover {
+            background: white;
+            box-shadow: 0 0 15px var(--neon-blue);
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 2px var(--neon-blue));
+            }
+            to {
+                filter: drop-shadow(0 0 10px var(--neon-blue));
+            }
+        }
+
+        .creator-code {
+            background: linear-gradient(45deg, var(--dark-blue), var(--metallic));
+            padding: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+            border-radius: 10px;
+            animation: borderGlow 2s infinite alternate;
+        }
+
+        @keyframes borderGlow {
+            from {
+                box-shadow: 0 0 5px var(--neon-blue);
+            }
+            to {
+                box-shadow: 0 0 20px var(--neon-blue);
+            }
+        }
+
+        .merch-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(0, 243, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .merch-item:hover::before {
+            transform: translateX(100%);
+        }
+
+        .success-message {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            z-index: 1000;
+            display: none;
+            animation: scaleIn 0.3s ease-out;
+        }
+
+        .success-message h2 {
+            font-size: 3rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 10px var(--neon-blue);
+            margin-bottom: 1rem;
+        }
+
+        @keyframes scaleIn {
+            from { transform: translate(-50%, -50%) scale(0); }
+            to { transform: translate(-50%, -50%) scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <img src="images/logo.png" alt="ABen Logo">
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="aben.html">Apply</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="images/logo.png" alt="ABen Logo">
+            </div>
+            <h1>Ay Ay ABen</h1>
+            <p>Welcome to the official ABen website!</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@abenfortnite" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.tiktok.com/@_aben1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.twitch.tv/codeaben8" target="_blank"><i class="fab fa-twitch"></i></a>
+                <a href="https://discord.com/invite/W533juErND" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://www.cameo.com/_aben15" target="_blank"><i class="fas fa-video"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="merch-section">
+        <h2>ABen Merch</h2>
+        <div class="merch-grid">
+            <!-- Hoodie -->
+            <div class="merch-item">
+                <img src="images/HF.png" alt="ABen Hoodie Front" class="front">
+                <img src="images/HB.png" alt="ABen Hoodie Back" class="back" style="display: none;">
+                <h3>ABen Hoodie</h3>
+                <p class="price">$33.49</p>
+                <a href="https://aben-3.creator-spring.com/listing/aben-merch?product=227&variation=105964" target="_blank" class="buy-btn">Buy Now</a>
+            </div>
+
+            <!-- T-Shirt -->
+            <div class="merch-item">
+                <img src="images/TF.png" alt="ABen T-Shirt Front" class="front">
+                <img src="images/TB.png" alt="ABen T-Shirt Back" class="back" style="display: none;">
+                <h3>ABen T-Shirt</h3>
+                <p class="price">$24.99</p>
+                <a href="https://aben-3.creator-spring.com/listing/aben-merch?product=2408&variation=106758" target="_blank" class="buy-btn">Buy Now</a>
+            </div>
+
+            <!-- Mug -->
+            <div class="merch-item">
+                <img src="images/Mug.png" alt="ABen Mug">
+                <h3>ABen Mug</h3>
+                <p class="price">$15.99</p>
+                <a href="https://aben-3.creator-spring.com/listing/aben-merch?product=1565&variation=104920" target="_blank" class="buy-btn">Buy Now</a>
+            </div>
+
+            <!-- Sticker -->
+            <div class="merch-item">
+                <img src="images/Sticker.png" alt="Use Code ABEN8 Sticker">
+                <h3>Use Code ABEN8 Sticker</h3>
+                <p class="price">$4.88</p>
+                <a href="https://aben-3.creator-spring.com/listing/aben-merch?product=794&variation=103544" target="_blank" class="buy-btn">Buy Now</a>
+            </div>
+
+            <!-- Long Sleeve -->
+            <div class="merch-item">
+                <img src="images/LF.png" alt="Long Sleeve ABen Shirt Front" class="front">
+                <img src="images/LB.png" alt="Long Sleeve ABen Shirt Back" class="back" style="display: none;">
+                <h3>Long Sleeve ABen Shirt</h3>
+                <p class="price">$30.99</p>
+                <a href="https://aben-3.creator-spring.com/listing/aben-merch?product=11&variation=377" target="_blank" class="buy-btn">Buy Now</a>
+            </div>
+
+            <!-- Crew Neck -->
+            <div class="merch-item">
+                <img src="images/1TF.png" alt="ABen Crew Neck Front" class="front">
+                <img src="images/1TB.png" alt="ABen Crew Neck Back" class="back" style="display: none;">
+                <h3>ABen Crew Neck</h3>
+                <p class="price">$17.99</p>
+                <a href="https://aben-3.creator-spring.com/listing/aben-merch?product=2394&variation=106784" target="_blank" class="buy-btn">Buy Now</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="creator-code">
+        <h2>Use Creator Code</h2>
+        <h1>ABEN8</h1>
+    </div>
+
+    <div class="success-message" id="successMessage">
+        <h2>AY AY ABEN!</h2>
+        <p>Thanks for applying!</p>
+    </div>
+
+    <script>
+        // Image flip animation for items with front/back views
+        document.querySelectorAll('.merch-item').forEach(item => {
+            const front = item.querySelector('.front');
+            const back = item.querySelector('.back');
+            
+            if (front && back) {
+                item.addEventListener('mouseenter', () => {
+                    front.style.display = 'none';
+                    back.style.display = 'block';
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    front.style.display = 'block';
+                    back.style.display = 'none';
+                });
+            }
+        });
+
+        // Form submission handling
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
+            // Don't prevent default - let form submit to formspree
+            
+            // Show success message
+            const successMessage = document.getElementById('successMessage');
+            successMessage.style.display = 'block';
+            
+            // Trigger confetti
+            const duration = 3 * 1000;
+            const animationEnd = Date.now() + duration;
+            
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            (function frame() {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return;
+                }
+
+                confetti({
+                    particleCount: 3,
+                    angle: 60,
+                    spread: 55,
+                    origin: { x: 0 },
+                    colors: ['#00f3ff', '#ffffff', '#001d3d']
+                });
+                confetti({
+                    particleCount: 3,
+                    angle: 120,
+                    spread: 55,
+                    origin: { x: 1 },
+                    colors: ['#00f3ff', '#ffffff', '#001d3d']
+                });
+
+                requestAnimationFrame(frame);
+            }());
+
+            // Hide success message after animation
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
